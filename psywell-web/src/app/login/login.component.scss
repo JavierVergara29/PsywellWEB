@@ -1,0 +1,64 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #007BBA; // Color de fondo azul
+
+  .login-header {
+    margin-bottom: 20px;
+    .logo {
+      width: 200px; // Ajustar el tamaño del logo
+      height: auto;
+      margin-bottom: 20px; // Espacio entre el logo y el formulario
+    }
+  }
+
+  .login-form {
+    background-color: #FFFFFF; // Fondo blanco del formulario
+    padding: 30px 40px; // Ajustar el espacio interno del formulario
+    border-radius: 12px; // Borde redondeado
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15); // Sombra del contenedor del formulario
+    width: 320px; // Ancho del formulario
+
+    .form-group {
+      margin-bottom: 20px;
+
+      label {
+        color: #007BBA; // Color azul para el label
+        font-weight: bold; // Fuente en negrita
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #B0B0B0; // Borde gris claro
+        border-radius: 6px; // Borde redondeado para el input
+        margin-top: 5px;
+        transition: all 0.3s ease; // Transición suave
+
+        &:focus {
+          border-color: #007BBA; // Borde azul al hacer focus
+          box-shadow: 0px 4px 8px rgba(0, 123, 186, 0.2); // Sombra al hacer focus
+        }
+      }
+    }
+
+    .btn-login {
+      width: 100%;
+      padding: 12px;
+      background-color: #CDAA00; // Amarillo dorado para el botón
+      border: none;
+      border-radius: 6px;
+      color: #FFFFFF; // Texto blanco
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken(#CDAA00, 10%); // Efecto al pasar el cursor
+      }
+    }
+  }
+}

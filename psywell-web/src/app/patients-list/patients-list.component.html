@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="patients-list-container">
+    <h1 class="header-title">Lista de Pacientes</h1>
+
+    <div class="search-bar-container">
+      <input type="text" placeholder="Buscar paciente..." (input)="onSearch($event)" class="search-bar" />
+    </div>
+
+    <div class="patients-list">
+      <!-- Lista de pacientes -->
+      <div *ngFor="let patient of filteredPatients" class="patient-card" (click)="selectPatient(patient)">
+        <div class="patient-info">
+          <h3 class="patient-name">{{ patient.name }}</h3>
+          <p><strong>Edad:</strong> {{ patient.age }} Años</p>
+          <p><strong>Diagnóstico:</strong> {{ patient.diagnosis }}</p>
+          <p><strong>Estado:</strong> {{ patient.emotionalStatus }}</p>
+        </div>
+        <div class="patient-actions">
+          <button class="btn-details">Ver Detalles</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

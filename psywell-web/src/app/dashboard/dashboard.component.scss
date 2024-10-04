@@ -1,0 +1,107 @@
+.dashboard-container {
+  padding: 20px;
+  background-color: #f2f2f2; /* Fondo claro para el contenedor */
+  color: #333; /* Color de texto principal */
+  text-align: center;
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    .logo {
+      width: 100px;
+      margin-right: 20px;
+    }
+    h1 {
+      font-size: 24px;
+      color: #007BBA;
+    }
+  }
+
+  .profile-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #007BBA; /* Fondo del perfil */
+    padding: 20px;
+    border-radius: 12px;
+    color: #FFFFFF;
+    margin-bottom: 30px;
+
+    .profile-details {
+      text-align: left;
+    }
+    .profile-picture {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+    }
+  }
+
+  .navigation-panel {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+
+    .nav-card {
+      background-color: #FFFFFF;
+      color: #007BBA;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      width: 150px;
+      text-align: center;
+      cursor: pointer;
+      transition: box-shadow 0.3s ease;
+
+      i {
+        font-size: 30px;
+        margin-bottom: 10px;
+      }
+
+      &:hover {
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+
+  .health-stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .stat-card {
+      background-color: #FFFFFF;
+      color: #007BBA;
+      border-radius: 12px;
+      width: 150px;
+      text-align: center;
+      padding: 15px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease;
+
+      i {
+        font-size: 30px;
+        margin-bottom: 10px;
+      }
+
+      &:hover {
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      p {
+        font-size: 18px;
+        margin: 5px 0;
+      }
+
+      span {
+        font-size: 14px;
+        color: #555;
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+<div class="patient-details-container">
+  <h1>Detalles del Paciente</h1>
+  <div *ngIf="patientDetails">
+    <h2>{{ patientDetails.name }}</h2>
+    <p><strong>Edad:</strong> {{ patientDetails.age }} Años</p>
+    <p><strong>Diagnóstico:</strong> {{ patientDetails.diagnosis }}</p>
+    <p><strong>Notas:</strong> {{ patientDetails.notes }}</p>
+  </div>
+  <button routerLink="/patients" class="btn-back">Volver a Lista de Pacientes</button>
+</div>
