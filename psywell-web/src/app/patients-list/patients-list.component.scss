@@ -1,91 +1,135 @@
 /* src/app/patients-list/patients-list.component.scss */
-.patients-list-container {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
-  margin: 40px auto;
-}
 
-.header-title {
-  color: #007BBA;
-  text-align: center;
-  margin-bottom: 30px;
-}
+$primary-color: #004381; // Azul principal de la app
+$secondary-color: #D4AF37; // Dorado
+$background-color: #004381; // Fondo gris claro para el contenedor
+$card-bg-color: #ffffff; // Fondo blanco para las tarjetas
+$text-color: #333333; // Color de texto principal
+$border-color: #cccccc; // Color del borde
+$hover-bg-color: #215d8b; // Color de fondo al hacer hover en las tarjetas
+$btn-bg-color: #007BBA; // Fondo del botón
+$btn-hover-color: darken($btn-bg-color, 10%); // Color del botón al hacer hover
+$shadow-color: rgba(0, 0, 0, 0.1); // Sombra de las tarjetas
 
-.search-bar-container {
+.container {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
-
-  .search-bar {
-    width: 80%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    font-size: 16px;
-    transition: border 0.3s ease;
-
-    &:focus {
-      border-color: #007BBA;
-      outline: none;
-    }
-  }
+  align-items: center;
+  padding: 40px;
+  background-color: $background-color;
+  min-height: 100vh;
 }
 
-.patients-list {
+.patients-list-container {
+  background-color: $card-bg-color;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px $shadow-color;
+  width: 100%;
+  max-width: 1200px;
   display: flex;
   flex-direction: column;
-}
+  gap: 20px;
 
-.patient-card {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-  margin: 10px 0;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-
-  &:hover {
-    background-color: #e6f2ff;
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  .header-title {
+    text-align: center;
+    color: $primary-color;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
   }
 
-  .patient-info {
-    flex: 1;
-    .patient-name {
-      font-size: 18px;
-      font-weight: bold;
-      color: #333;
-    }
-
-    p {
-      margin: 5px 0;
-      color: #666;
-    }
-  }
-
-  .patient-actions {
+  .search-bar-container {
     display: flex;
-    align-items: center;
     justify-content: center;
+    margin-bottom: 30px;
 
-    .btn-details {
-      padding: 10px 15px;
-      border: none;
-      border-radius: 5px;
-      background-color: #007BBA;
-      color: #ffffff;
+    .search-bar {
+      padding: 15px 20px;
+      border: 1px solid $border-color;
+      border-radius: 10px;
+      font-size: 18px;
+      width: 100%;
+      max-width: 600px;
+      box-shadow: 0 4px 8px $shadow-color;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+      &:focus {
+        outline: none;
+        border-color: $primary-color;
+        box-shadow: 0 0 12px rgba($primary-color, 0.4);
+      }
+    }
+  }
+
+  .patients-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+
+    .patient-card {
+      background-color: $card-bg-color;
+      border: 1px solid $border-color;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px $shadow-color;
+      padding: 20px;
+      width: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 
       &:hover {
-        background-color: #005f8e;
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px $shadow-color;
+        background-color: $hover-bg-color;
+      }
+
+      .patient-info {
+        h3.patient-name {
+          color: $primary-color;
+          font-size: 22px;
+          margin-bottom: 10px;
+        }
+
+        p {
+          margin: 5px 0;
+          color: $text-color;
+          font-size: 16px;
+
+          strong {
+            color: $primary-color;
+            font-weight: 600;
+          }
+        }
+      }
+
+      .patient-actions {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 10px;
+
+        .btn-details {
+          padding: 10px 15px;
+          background-color: $btn-bg-color;
+          color: #ffffff;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+          font-size: 16px;
+          transition: background-color 0.3s ease, transform 0.3s ease;
+
+          &:hover {
+            background-color: $btn-hover-color;
+            transform: translateY(-2px);
+          }
+
+          &:active {
+            transform: translateY(0);
+          }
+        }
       }
     }
   }

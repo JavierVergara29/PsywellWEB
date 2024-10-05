@@ -1,0 +1,22 @@
+{
+    "71837284": {
+        "route_smsc_key": "soporte-oficina",
+        "router_id": "backup"
+    },
+    "72159246": {
+        "route_smsc_key": "soporte-oficina",
+        "router_id": "backup"
+    },
+    "72187154": {
+        "route_smsc_key": "default",
+        "router_id": "main"
+    },
+    "72187798": {
+        "route_smsc_key": "ruta-mixta",
+        "router_id": "backup"
+    },
+    "72190573": {
+        "route_smsc_key": "socofar-route",
+        "router_id": "backup"
+    }
+}

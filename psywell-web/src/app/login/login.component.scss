@@ -1,64 +1,140 @@
+/* src/app/login/login.component.scss */
+
+$primary-color: #007BBA; // Azul principal de la app
+$secondary-color: #D4AF37; // Dorado
+$background-color: #004174; // Fondo de la aplicación
+$form-bg-color: #ffffff; // Fondo del formulario
+$text-color: #333333; // Color de texto principal
+$input-border-color: #cccccc; // Color del borde de los inputs
+$btn-hover-color: darken($primary-color, 10%); // Color al hacer hover en el botón
+$link-color: #673AB7; // Color de los enlaces
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+}
+
 .login-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   height: 100vh;
-  background-color: #007BBA; // Color de fondo azul
+  background-color: $background-color;
+  padding: 20px;
+  animation: fadeIn 1s ease-in-out; // Animación de entrada
 
   .login-header {
-    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px; // Espacio entre el logo y el formulario
+
     .logo {
-      width: 200px; // Ajustar el tamaño del logo
+      width: 120px; // Aumentar tamaño del logo
       height: auto;
-      margin-bottom: 20px; // Espacio entre el logo y el formulario
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: 28px; // Aumentar tamaño de fuente del título
+      color: $form-bg-color; // Cambiar el color del texto a blanco
+      font-weight: 700; // Mayor grosor
+      margin: 0; // Remover margen por defecto
     }
   }
 
   .login-form {
-    background-color: #FFFFFF; // Fondo blanco del formulario
-    padding: 30px 40px; // Ajustar el espacio interno del formulario
-    border-radius: 12px; // Borde redondeado
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15); // Sombra del contenedor del formulario
-    width: 320px; // Ancho del formulario
+    background-color: $form-bg-color;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); // Aumentar la sombra para dar más efecto de "card"
+    padding: 50px 60px; // Aumentar espacio interno
+    width: 350px; // Reducir un poco el tamaño del formulario
+    display: flex;
+    flex-direction: column;
+    gap: 25px; // Mayor separación entre los campos
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+      transform: translateY(-5px); // Elevar al hacer hover
+    }
 
     .form-group {
-      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px; // Separar etiquetas y campos de entrada
 
       label {
-        color: #007BBA; // Color azul para el label
-        font-weight: bold; // Fuente en negrita
+        font-size: 16px;
+        color: $text-color;
+        font-weight: 600;
       }
 
       .form-control {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #B0B0B0; // Borde gris claro
-        border-radius: 6px; // Borde redondeado para el input
-        margin-top: 5px;
-        transition: all 0.3s ease; // Transición suave
+        padding: 14px 18px; // Mayor espacio en los inputs
+        border: 1px solid $input-border-color;
+        border-radius: 10px; // Bordes más redondeados
+        font-size: 16px;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
 
         &:focus {
-          border-color: #007BBA; // Borde azul al hacer focus
-          box-shadow: 0px 4px 8px rgba(0, 123, 186, 0.2); // Sombra al hacer focus
+          outline: none;
+          border-color: $secondary-color; // Cambiar el borde a dorado al enfocar
+          box-shadow: 0 0 10px rgba($secondary-color, 0.3);
         }
       }
     }
 
     .btn-login {
-      width: 100%;
-      padding: 12px;
-      background-color: #CDAA00; // Amarillo dorado para el botón
+      padding: 15px 20px; // Mayor tamaño del botón
       border: none;
-      border-radius: 6px;
-      color: #FFFFFF; // Texto blanco
-      font-weight: bold;
+      border-radius: 10px;
+      background-color: $primary-color;
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: 600;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, transform 0.3s ease;
 
       &:hover {
-        background-color: darken(#CDAA00, 10%); // Efecto al pasar el cursor
+        background-color: $btn-hover-color;
+        transform: translateY(-2px);
+      }
+
+      &:active {
+        transform: translateY(0);
       }
     }
+
+    .login-help {
+      text-align: center;
+      margin-top: 10px;
+
+      a {
+        color: $link-color;
+        text-decoration: none;
+        font-size: 14px;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: darken($link-color, 10%);
+        }
+      }
+    }
+  }
+}
+
+// Animación de entrada suave
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
