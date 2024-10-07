@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EmotionalStatusComponent } from './emotional-status/emotional-status.component';
 import { PhysiologicalMonitorComponent } from './physiological-monitor/physiological-monitor.component';
@@ -10,7 +9,6 @@ import { PatientDetailsComponent } from './patient-details/patient-details.compo
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'emotional-status', component: EmotionalStatusComponent },
   { path: 'physiological-monitor', component: PhysiologicalMonitorComponent },

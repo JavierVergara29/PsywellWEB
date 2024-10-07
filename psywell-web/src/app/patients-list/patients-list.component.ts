@@ -7,7 +7,7 @@ interface Patient {
   name: string;
   age: number;
   diagnosis: string;
-  emotionalStatus: string; // Agregar la propiedad emotionalStatus
+  emotionalStatus: string; 
 }
 
 @Component({
@@ -21,7 +21,7 @@ export class PatientsListComponent {
   filteredPatients: Patient[] = [
     { id: '1', name: 'Cristina Zapata', age: 25, diagnosis: 'Depresión', emotionalStatus: 'Estable' },
     { id: '2', name: 'Juan Pérez', age: 30, diagnosis: 'Ansiedad', emotionalStatus: 'Moderado' },
-    { id: '3', name: 'Ana García', age: 28, diagnosis: 'Estrés', emotionalStatus: 'Severo' }
+    { id: '3', name: 'Cristopher Soto', age: 23, diagnosis: 'Depresion Severa', emotionalStatus: 'Severo' }
   ];
 
   selectPatient(patient: Patient) {
